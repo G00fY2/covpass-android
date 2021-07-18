@@ -9,7 +9,7 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.widget.RelativeLayout
+import android.widget.FrameLayout
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import de.rki.covpass.commonapp.R
@@ -23,7 +23,7 @@ public class RoundImageButton
     context: Context,
     attributeSet: AttributeSet? = null,
     defStyleAttributeSet: Int = 0
-) : RelativeLayout(
+) : FrameLayout(
     context,
     attributeSet,
     defStyleAttributeSet

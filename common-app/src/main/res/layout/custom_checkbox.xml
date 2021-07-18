@@ -4,8 +4,9 @@
   ~ (C) Copyright IBM Corp. 2021
   -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
+  android:orientation="horizontal"
   android:layout_width="match_parent"
   android:layout_height="wrap_content">
 
@@ -13,7 +14,7 @@
     android:id="@+id/checkbox"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_centerVertical="true"
+    android:layout_gravity="center_vertical"
     android:layout_marginStart="@dimen/grid_three"
     android:button="@drawable/checkbox_bg"
     tools:checked="true" />
@@ -24,8 +25,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginEnd="@dimen/grid_three"
-    android:layout_toEndOf="@+id/checkbox"
     tools:maxLines="5"
     tools:text="@tools:sample/lorem/random" />
 
-</RelativeLayout>
+</LinearLayout>

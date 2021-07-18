@@ -4,7 +4,8 @@
   ~ (C) Copyright IBM Corp. 2021
   -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
@@ -49,42 +50,47 @@
         tools:ignore="ContentDescription"
         tools:src="@tools:sample/backgrounds/scenic"/>
 
-      <RelativeLayout
+      <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
           android:id="@+id/welcome_encryption_header_textview"
           style="@style/Header.OnBackground.Small"
-          android:layout_width="match_parent"
+          android:layout_width="0dp"
           android:layout_height="wrap_content"
           android:layout_marginStart="@dimen/grid_nine"
           android:layout_marginEnd="@dimen/grid_eight"
-          android:gravity="start"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
           tools:text="@tools:sample/lorem" />
 
         <TextView
           android:id="@+id/welcome_encryption_textview"
           style="@style/DefaultText.OnBackground70"
-          android:layout_width="match_parent"
+          android:layout_width="0dp"
           android:layout_height="wrap_content"
-          android:layout_below="@id/welcome_encryption_header_textview"
-          android:layout_alignStart="@id/welcome_encryption_header_textview"
           android:layout_marginEnd="@dimen/grid_four"
           android:gravity="start"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="@id/welcome_encryption_header_textview"
+          app:layout_constraintTop_toBottomOf="@id/welcome_encryption_header_textview"
           tools:text="@tools:sample/lorem/random" />
 
         <ImageView
           android:id="@+id/welcome_encryption_imageview"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_centerVertical="true"
           android:layout_marginLeft="@dimen/grid_four"
           android:adjustViewBounds="true"
           android:src="@drawable/lock_outline"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
           tools:ignore="ContentDescription" />
 
-      </RelativeLayout>
+      </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
@@ -94,8 +100,7 @@
     android:id="@+id/bottom_sheet_bottom_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
+    android:layout_gravity="bottom"
     android:background="@drawable/common_gradient_fadeout"
     android:paddingStart="@dimen/grid_two"
     android:paddingEnd="@dimen/grid_two">
@@ -111,4 +116,4 @@
 
   </FrameLayout>
 
-</RelativeLayout>
+</FrameLayout>

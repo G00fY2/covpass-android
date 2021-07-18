@@ -112,13 +112,16 @@
             tools:ignore="ContentDescription" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <RelativeLayout
+        <LinearLayout
           android:id="@+id/certificate_status_container"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:gravity="center_vertical"
           android:paddingVertical="@dimen/grid_three"
           android:paddingStart="@dimen/grid_three"
-          android:paddingEnd="@dimen/grid_two_half">
+          android:paddingEnd="@dimen/grid_two_half"
+          tools:ignore="UseCompoundDrawables">
 
           <TextView
             android:id="@+id/certificate_protection_textview"
@@ -132,12 +135,10 @@
             android:id="@+id/certificate_arrow_imageview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_toEndOf="@+id/certificate_protection_textview"
             android:adjustViewBounds="true"
             tools:ignore="ContentDescription" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
       </LinearLayout>
 
